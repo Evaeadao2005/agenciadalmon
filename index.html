@@ -1,35 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!-- Meta tags básicas -->
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agência Dalmon oferece soluções em marketing digital, criação de artes e tráfego pago para empresas em Juazeiro do Norte, Iguatu e região.">
-    <meta name="keywords" content="marketing digital, Juazeiro do Norte, Iguatu, tráfego pago, redes sociais, identidade visual, criação de artes, propaganda na internet, agência de marketing">
+    <meta name="description" content="Agência Dalmon oferece soluções completas em marketing digital, criação de artes e tráfego pago para empresas em Juazeiro do Norte, Iguatu, Crato e cidades vizinhas.">
+    <meta name="keywords" content="marketing digital, tráfego pago, Juazeiro do Norte, Iguatu, Crato, Barbalha, Ceará, redes sociais, identidade visual, criação de artes, propaganda na internet, SEO local, agência de marketing">
     <meta name="author" content="Agência Dalmon">
-    
+    <meta name="robots" content="index, follow">
+
     <!-- Open Graph (para redes sociais) -->
     <meta property="og:title" content="Agência Dalmon - Marketing Digital e Tráfego Pago">
-    <meta property="og:description" content="Impulsione seu negócio com a Agência Dalmon, especializada em marketing digital, criação de mídias e tráfego pago para empresas em Juazeiro do Norte, Iguatu e cidades próximas.">
+    <meta property="og:description" content="Impulsione seu negócio com a Agência Dalmon, especializada em marketing digital, criação de mídias e tráfego pago para empresas em Juazeiro do Norte, Iguatu, Crato, Barbalha e região.">
     <meta property="og:image" content="/logos/logo.jpg">
     <meta property="og:url" content="https://www.agenciadalmon.com.br">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Agência Dalmon - Marketing Digital e Tráfego Pago">
+    <meta name="twitter:description" content="Oferecemos soluções em marketing digital e tráfego pago, atendendo empresas de Juazeiro do Norte, Iguatu e região.">
+    <meta name="twitter:image" content="/logos/logo.jpg">
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="BR-CE"> <!-- Ceará -->
+    <meta name="geo.placename" content="Juazeiro do Norte, Iguatu, Crato, Barbalha, Ceará">
+    <meta name="geo.position" content="-7.2120;-39.3209"> <!-- Latitude e Longitude aproximadas de Juazeiro do Norte -->
+    <meta name="ICBM" content="-7.2120, -39.3209">
 
     <!-- Favicon -->
-    <link rel="icon" href="/logos/logo.ico" type="image/x-icon"> <!-- Altere o caminho conforme necessário -->
+    <link rel="icon" href="/logos/logo.ico" type="image/x-icon">
 
-    <!-- Configurações de título -->
-    <title>Agência Dalmon - Marketing Digital</title>
+    <!-- Schema.org (JSON-LD) para LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Agência Dalmon",
+      "image": "https://www.agenciadalmon.com.br/logos/logo.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Juazeiro do Norte, Iguatu, Crato, Barbalha",
+        "addressRegion": "CE",
+        "postalCode": "63000-000",
+        "addressCountry": "BR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-88-9350-9111",
+        "contactType": "Customer Service",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese"
+      },
+      "sameAs": [
+        "https://www.instagram.com/agenciadalmon",
+        "https://www.facebook.com/agenciadalmon"
+      ],
+      "url": "https://www.agenciadalmon.com.br",
+      "description": "A Agência Dalmon oferece soluções em marketing digital, gestão de tráfego pago e criação de artes para empresas em Juazeiro do Norte, Iguatu, Crato e região."
+    }
+    </script>
 
-    <!-- Links para fontes externas, se necessário -->
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ2JTK5ZSY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WQ2JTK5ZSY');
+    </script>
+
+    <!-- Breadcrumbs (Caminho de Navegação) -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.agenciadalmon.com.br"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Tag de Canonical -->
+    <link rel="canonical" href="https://www.agenciadalmon.com.br">
+    <!-- Outras tags meta, título, etc. -->
     <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Tags adicionais para SEO -->
-    <meta name="robots" content="index, follow">
-    <title>Agência Dalmon - Marketing Digital e Tráfego Pago</title>
-    <style>
-        <link rel="stylesheet" href="/styles/style.css">
-    </style>
+    <title>Agência Dalmon - Marketing Digital</title>
 </head>
 <body>
 
