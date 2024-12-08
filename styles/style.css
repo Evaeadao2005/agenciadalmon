@@ -1,0 +1,204 @@
+  /* Reset de estilo */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: white;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #121212;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        header .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #FF4500;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+
+        header .logo img {
+            width: 60px;
+            height: auto;
+        }
+
+        .cta {
+            background-color: #FF4500;
+            color: white;
+            padding: 16px 40px;
+            font-size: 22px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cta:hover {
+            background-color: #FF3300;
+            box-shadow: 0 0 25px rgba(255, 69, 0, 1);
+            transform: scale(1.1);
+            animation: pulsate 1.5s ease-out infinite;
+        }
+
+        .cta .whatsapp-icon {
+            width: 20px;
+            height: auto;
+        }
+
+        @keyframes pulsate {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(255, 69, 0, 0.6);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(255, 69, 0, 1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(255, 69, 0, 0.6);
+            }
+        }
+
+        main {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            background-color: #121212;
+            color: white;
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+
+        main h1 {
+            font-size: 50px;
+            color: #FF4500;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        #services {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #222222;
+            margin-top: 40px;
+        }
+
+        #services h2 {
+            font-size: 40px;
+            color: #FF4500;
+            margin-bottom: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: #333;
+            color: white;
+            border-radius: 10px;
+            padding: 40px 20px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #FF4500;
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #121212;
+            color: #888;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #FF4500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 5%;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header .logo {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+
+            .services-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
