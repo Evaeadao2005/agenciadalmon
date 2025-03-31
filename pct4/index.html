@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pacote Especial de 4 Dias por R$75 - Pagamento via PIX">
+    <meta name="keywords" content="plano 4 dias, oferta especial, pagamento PIX, tráfego pago, Meta Ads">
+    <meta name="author" content="Agência Dalmon">
+    <meta property="og:title" content="Pacote 4 Dias - Oferta Especial" />
+    <meta property="og:description" content="Serviço de tráfego pago no Meta Ads por 4 dias com orçamento de até R$100 diários. Pagamento via PIX: sakaisenpaiyt@gmail.com" />
+    <meta property="og:image" content="https://example.com/preview-image.jpg" />
+    <meta property="og:url" content="https://example.com/pacote-4-dias" />
+    <title>Pacote 4 Dias - Oferta Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff0000, #8b0000);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        .payment-info {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .pix-key {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        .service-info {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #ffcc00;
+        }
+        button {
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pacote Especial - 4 Dias</h1>
+        <p>Aproveite 4 dias por apenas:</p>
+        <p class="price">R$ 75,00</p>
+        <p><strong>Pagamento:</strong> 50% no início e 50% no final</p>
+        <div class="payment-info">
+            <p><strong>Pagamento via PIX:</strong></p>
+            <p class="pix-key">sakaisenpaiyt@gmail.com</p>
+        </div>
+        <div class="service-info">
+            <p><strong>Serviço incluído:</strong></p>
+            <p>Tráfego pago no Meta Ads por 4 dias</p>
+            <p>Orçamento de até R$ 100 diários</p>
+        </div>
+        <button onclick="copyPix()">Copiar Chave PIX</button>
+        <button onclick="sendReceipt()">Enviar Comprovante</button>
+    </div>
+    <script>
+        function copyPix() {
+            navigator.clipboard.writeText("sakaisenpaiyt@gmail.com");
+            alert("Chave PIX copiada!");
+        }
+        function sendReceipt() {
+            window.location.href = "https://wa.me/5588993509111?text=Envio%20de%20comprovante%20de%20pagamento%20para%20o%20Pacote%204%20Dias";
+        }
+    </script>
+</body>
+</html>
