@@ -29,8 +29,65 @@
             margin: 0 auto;
             padding: 20px;
             position: relative;
+            display: none; /* Esconde o conteúdo inicialmente */
         }
         
+        /* Novo estilo para o botão misterioso */
+        .mystery-button-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+        }
+        
+        .mystery-button {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary), var(--dark));
+            border: 5px solid var(--accent);
+            color: var(--accent);
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 0 30px var(--primary);
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+        
+        .mystery-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 50px var(--primary);
+            animation: none;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 30px var(--primary); }
+            50% { transform: scale(1.05); box-shadow: 0 0 50px var(--primary); }
+            100% { transform: scale(1); box-shadow: 0 0 30px var(--primary); }
+        }
+        
+        .mystery-text {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: var(--light);
+            text-align: center;
+            max-width: 80%;
+            opacity: 0.8;
+        }
+        
+        /* Restante do seu CSS original... */
         header {
             text-align: center;
             padding: 30px 0;
@@ -299,189 +356,220 @@
 <audio id="audio" muted preload="auto" playsinline>
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
-    <div class="birthday-container">
-        <header>
-            <h1>FELIZ ANIVERSÁRIO, BRUNO!</h1>
-            <div class="subtitle">Das memórias mais doces às mais... engraçadas! 🐸</div>
-        </header>
-        
-        <!-- Memória 1: Pastelaria Sensação -->
-        <div class="memory-box">
-            <h2 class="memory-title">Pastelaria Sensação</h2>
-            <div class="memory-content">
-                <img src="pastelaria.jpg" alt="Eu e Bruno na Pastelaria Sensação quando crianças" class="memory-photo">
-                <div class="memory-text">
-                    <p>Lembra quando a gente ia na Pastelaria Sensação?</p>
-                </div>
+
+<!-- Botão misterioso que aparece primeiro -->
+<div class="mystery-button-container" id="mysteryContainer">
+    <button class="mystery-button" id="mysteryButton">BRUNO, CLIQUE AQUI!</button>
+    <div class="mystery-text">Algo especial espera por você...</div>
+</div>
+
+<!-- Conteúdo principal (inicialmente escondido) -->
+<div class="birthday-container" id="birthdayContainer">
+    <header>
+        <h1>FELIZ ANIVERSÁRIO, BRUNO!</h1>
+        <div class="subtitle">Das memórias mais doces às mais... engraçadas! 🐸</div>
+    </header>
+    
+    <!-- Memória 1: Pastelaria Sensação -->
+    <div class="memory-box">
+        <h2 class="memory-title">Pastelaria Sensação</h2>
+        <div class="memory-content">
+            <img src="pastelaria.jpg" alt="Eu e Bruno na Pastelaria Sensação quando crianças" class="memory-photo">
+            <div class="memory-text">
+                <p>Lembra quando a gente ia na Pastelaria Sensação?</p>
             </div>
         </div>
-        
-        <!-- Memória 2: Dormindo na viagem -->
-        <div class="memory-box">
-            <h2 class="memory-title">Soninho em Canoa Quebrada</h2>
-            <div class="memory-content">
-                <img src="canoaquebrada.jpg" alt="Eu e Bruno dormindo na viagem para Canoa Quebrada" class="memory-photo">
-                <div class="memory-text">
-                    <p>Essa viagem para Canoa Quebrada com Gabriel e David foi épica! Mas o momento mais pacífico foi quando a gente caiu no sono no meio da viagem.</p>
-                </div>
+    </div>
+    
+    <!-- Memória 2: Dormindo na viagem -->
+    <div class="memory-box">
+        <h2 class="memory-title">Soninho em Canoa Quebrada</h2>
+        <div class="memory-content">
+            <img src="canoaquebrada.jpg" alt="Eu e Bruno dormindo na viagem para Canoa Quebrada" class="memory-photo">
+            <div class="memory-text">
+                <p>Essa viagem para Canoa Quebrada com Gabriel e David foi épica! Mas o momento mais pacífico foi quando a gente caiu no sono no meio da viagem.</p>
             </div>
         </div>
-        
-        <!-- Memória 3: Aeroporto de Iguatu -->
-        <div class="memory-box">
-            <h2 class="memory-title">Aventura no Aeroporto</h2>
-            <div class="memory-content">
-                <img src="aeroporto.jpg" alt="Eu e Bruno no aeroporto de Iguatu" class="memory-photo">
-                <div class="memory-text">
-                    <p>Essa foi a nossa grande expedição ao aeroporto de Iguatu com o Celso!</p>
-                    <p>Até hoje não sei quem estava mais animado nesse dia, você ou eu! kkkk</p>
-                </div>
+    </div>
+    
+    <!-- Memória 3: Aeroporto de Iguatu -->
+    <div class="memory-box">
+        <h2 class="memory-title">Aventura no Aeroporto</h2>
+        <div class="memory-content">
+            <img src="aeroporto.jpg" alt="Eu e Bruno no aeroporto de Iguatu" class="memory-photo">
+            <div class="memory-text">
+                <p>Essa foi a nossa grande expedição ao aeroporto de Iguatu com o Celso!</p>
+                <p>Até hoje não sei quem estava mais animado nesse dia, você ou eu! kkkk</p>
             </div>
         </div>
-        
-        <!-- Memória 4: Peixada -->
-        <div class="memory-box">
-            <h2 class="memory-title">Dia da Peixada</h2>
-            <div class="memory-content">
-                <img src="peixada.jpg" alt="Eu, Bruno, tio Celso e Esther no dia da peixada" class="memory-photo">
-                <div class="memory-text">
-                    <p>Esse dia da peixada foi histórico!</p>
-                    <p>Você, eu, tio Celso e Esther após saírmos da peixada que fomos almoçar</p>
-                    <p>Essas são as memórias que guardo no coração - e no estômago também!</p>
-                </div>
+    </div>
+    
+    <!-- Memória 4: Peixada -->
+    <div class="memory-box">
+        <h2 class="memory-title">Dia da Peixada</h2>
+        <div class="memory-content">
+            <img src="peixada.jpg" alt="Eu, Bruno, tio Celso e Esther no dia da peixada" class="memory-photo">
+            <div class="memory-text">
+                <p>Esse dia da peixada foi histórico!</p>
+                <p>Você, eu, tio Celso e Esther após saírmos da peixada que fomos almoçar</p>
+                <p>Essas são as memórias que guardo no coração - e no estômago também!</p>
             </div>
         </div>
-        
-        <!-- Vídeo do Sapo -->
-        <div class="memory-box">
-            <h2 class="memory-title">O Beijo do Sapo Real</h2>
-            <div class="memory-content">
-                <div class="video-container">
-                    <video id="frogVideo" poster="sapo_thumbnail.jpg">
-                        <source src="sapo.mp4" type="video/mp4">
-                        Seu navegador não suporta vídeos.
-                    </video>
-                    <div class="play-button" id="playButton"></div>
-                </div>
-                <div class="memory-text">
-                    <p>E como não lembrar do momento em que você quase virou um príncipe encantado? 🐸</p>
-                    <p>Enquanto você dormia tão tranquilamente, eu fiz o que qualquer primo amoroso faria: tentei fazer você beijar um sapo!</p>
-                    <p>Clique no play para reviver esse momento mágico (e um pouco nojento)!</p>
-                    <p>PS: Prometo que o sapo saiu ileso dessa aventura!</p>
-                </div>
+    </div>
+    
+    <!-- Vídeo do Sapo -->
+    <div class="memory-box">
+        <h2 class="memory-title">O Beijo do Sapo Real</h2>
+        <div class="memory-content">
+            <div class="video-container">
+                <video id="frogVideo" poster="sapo_thumbnail.jpg">
+                    <source src="sapo.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos.
+                </video>
+                <div class="play-button" id="playButton"></div>
+            </div>
+            <div class="memory-text">
+                <p>E como não lembrar do momento em que você quase virou um príncipe encantado? 🐸</p>
+                <p>Enquanto você dormia tão tranquilamente, eu fiz o que qualquer primo amoroso faria: tentei fazer você beijar um sapo!</p>
+                <p>Clique no play para reviver esse momento mágico (e um pouco nojento)!</p>
+                <p>PS: Prometo que o sapo saiu ileso dessa aventura!</p>
             </div>
         </div>
-        
-        <!-- Mensagem Final -->
-        <div class="memory-box">
-            <div class="memory-content" style="flex-direction: column; text-align: center;">
-                <h2 class="memory-title">Para Meu Primo Incrível</h2>
-                <div class="memory-text">
+    </div>
+    
+    <!-- Mensagem Final -->
+    <div class="memory-box">
+        <div class="memory-content" style="flex-direction: column; text-align: center;">
+            <h2 class="memory-title">Para Meu Primo Incrível</h2>
+            <div class="memory-text">
 <p>Bruno, você é muito mais que um primo — é um irmão de alma, um exemplo de pessoa e meu parceiro oficial nas melhores aventuras (e nas maiores travessuras)!</p>
 <p>Cada lembrança que tenho ao seu lado mostra o quanto a nossa conexão é especial. Dos pastéis aos sapos, são momentos simples que viraram histórias inesquecíveis — e que guardo com muito carinho.</p>
 <p>Mesmo seguindo caminhos diferentes, uso você como exemplo de determinação. Em breve formado pela UNICAMP, já brilhando na Unilever e, logo mais, como químico na Petrobras… Você mostra que esforço, foco e autenticidade levam longe. E isso me inspira todos os dias.</p>
 <p>No seu aniversário, desejo que sua vida continue cheia de conquistas, e que você nunca perca essa essência que te torna tão único — e, claro, que continue perdoando minhas brincadeiras de sempre 😄</p>
 <p>Que venham muitas outras memórias, aventuras e risadas. Porque com você, até as coisas mais simples se tornam especiais.</p>
-
-                </div>
             </div>
-        </div>
-        
-        <div class="signature">
-            <p>Com todo amor,</p>
-            <p>João Victor</p>
         </div>
     </div>
     
-    <img src="sapo.png" alt="Sapo" class="frog-king" id="frogKing">
+    <div class="signature">
+        <p>Com todo amor,</p>
+        <p>João Victor</p>
+    </div>
+</div>
+
+<img src="sapo.png" alt="Sapo" class="frog-king" id="frogKing">
+
+<script>
+    // Controles do vídeo
+    const video = document.getElementById('frogVideo');
+    const playButton = document.getElementById('playButton');
     
-    <script>
-        // Controles do vídeo
-        const video = document.getElementById('frogVideo');
-        const playButton = document.getElementById('playButton');
-        
-        playButton.addEventListener('click', () => {
+    playButton.addEventListener('click', () => {
+        video.play();
+        playButton.style.display = 'none';
+    });
+    
+    video.addEventListener('click', () => {
+        if (video.paused) {
             video.play();
             playButton.style.display = 'none';
-        });
+        } else {
+            video.pause();
+            playButton.style.display = 'flex';
+        }
+    });
+    
+    // Efeito do sapo
+    const frog = document.getElementById('frogKing');
+    let frogClicks = 0;
+    
+    frog.addEventListener('click', () => {
+        frogClicks++;
         
-        video.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-                playButton.style.display = 'none';
-            } else {
-                video.pause();
-                playButton.style.display = 'flex';
-            }
-        });
-        
-        // Efeito do sapo
-        const frog = document.getElementById('frogKing');
-        let frogClicks = 0;
-        
-        frog.addEventListener('click', () => {
-            frogClicks++;
-            
-            if (frogClicks === 3) {
-                alert('Bruno, cuidado! O sapo está voltando para te beijar de volta! 🐸💋');
-                frogClicks = 0;
-            }
-            
-            // Efeito de confete
-            for (let i = 0; i < 50; i++) {
-                createConfetti();
-            }
-        });
-        
-        // Função de confete
-        function createConfetti() {
-            const confetti = document.createElement('div');
-            confetti.className = 'confetti';
-            confetti.style.left = Math.random() * window.innerWidth + 'px';
-            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-            document.body.appendChild(confetti);
-            
-            let position = 0;
-            const fallInterval = setInterval(() => {
-                position += 5 + Math.random() * 5;
-                confetti.style.top = position + 'px';
-                confetti.style.transform = `rotate(${position}deg)`;
-                
-                if (position > window.innerHeight) {
-                    clearInterval(fallInterval);
-                    confetti.remove();
-                }
-            }, 20);
+        if (frogClicks === 3) {
+            alert('Bruno, cuidado! O sapo está voltando para te beijar de volta! 🐸💋');
+            frogClicks = 0;
         }
         
-        // Confete inicial
-        window.addEventListener('load', () => {
-            for (let i = 0; i < 100; i++) {
+        // Efeito de confete
+        for (let i = 0; i < 50; i++) {
+            createConfetti();
+        }
+    });
+    
+    // Função de confete
+    function createConfetti() {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        document.body.appendChild(confetti);
+        
+        let position = 0;
+        const fallInterval = setInterval(() => {
+            position += 5 + Math.random() * 5;
+            confetti.style.top = position + 'px';
+            confetti.style.transform = `rotate(${position}deg)`;
+            
+            if (position > window.innerHeight) {
+                clearInterval(fallInterval);
+                confetti.remove();
+            }
+        }, 20);
+    }
+    
+    // Confete inicial
+    window.addEventListener('load', () => {
+        for (let i = 0; i < 100; i++) {
+            setTimeout(createConfetti, i * 50);
+        }
+    });
+    
+    // Novo script para o botão misterioso
+    document.addEventListener('DOMContentLoaded', function() {
+        const mysteryButton = document.getElementById('mysteryButton');
+        const mysteryContainer = document.getElementById('mysteryContainer');
+        const birthdayContainer = document.getElementById('birthdayContainer');
+        const audio = document.getElementById('audio');
+        
+        mysteryButton.addEventListener('click', function() {
+            // Toca a música
+            audio.muted = false;
+            audio.play().catch(e => {
+                console.log('Reprodução automática bloqueada:', e);
+                // Se falhar, tenta novamente com interação do usuário
+                document.addEventListener('click', function tryPlay() {
+                    audio.play();
+                    document.removeEventListener('click', tryPlay);
+                });
+            });
+            
+            // Esconde o botão misterioso
+            mysteryContainer.style.opacity = '0';
+            mysteryContainer.style.pointerEvents = 'none';
+            
+            // Mostra o conteúdo principal com efeito
+            setTimeout(() => {
+                mysteryContainer.style.display = 'none';
+                birthdayContainer.style.display = 'block';
+                
+                // Animação de entrada
+                birthdayContainer.style.opacity = '0';
+                birthdayContainer.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    birthdayContainer.style.transition = 'opacity 1s, transform 1s';
+                    birthdayContainer.style.opacity = '1';
+                    birthdayContainer.style.transform = 'translateY(0)';
+                }, 100);
+            }, 500);
+            
+            // Confetes para celebrar
+            for (let i = 0; i < 150; i++) {
                 setTimeout(createConfetti, i * 50);
             }
         });
-    </script><script>
-  const audio = document.getElementById('audio');
-
-  function tentarTocar() {
-    audio.muted = false;
-    const play = audio.play();
-
-    if (play !== undefined) {
-      play.catch(() => {
-        // Se falhar, aguarda primeiro toque do usuário
-        const ativarSom = () => {
-          audio.play();
-          document.removeEventListener('click', ativarSom);
-          document.removeEventListener('touchstart', ativarSom);
-        };
-        document.addEventListener('click', ativarSom);
-        document.addEventListener('touchstart', ativarSom);
-      });
-    }
-  }
-
-  window.addEventListener('load', tentarTocar);
+    });
 </script>
 </body>
 </html>
