@@ -232,6 +232,43 @@
             border: 3px solid var(--primary);
         }
         
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .music-control {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .music-info {
+            color: white;
+            font-size: 14px;
+            margin-right: 10px;
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -249,10 +286,19 @@
                 width: 100%;
                 height: auto;
             }
+            
+            .music-player {
+                bottom: 80px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     </style>
 </head>
 <body>
+<audio id="audio" autoplay muted preload="auto" playsinline>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
     <div class="birthday-container">
         <header>
             <h1>FELIZ ANIVERSÁRIO, BRUNO!</h1>
@@ -265,6 +311,7 @@
             <div class="memory-content">
                 <img src="pastelaria.jpg" alt="Eu e Bruno na Pastelaria Sensação quando crianças" class="memory-photo">
                 <div class="memory-text">
+                    <p>Lembra quando a gente ia na Pastelaria Sensação?</p>
                 </div>
             </div>
         </div>
@@ -273,9 +320,9 @@
         <div class="memory-box">
             <h2 class="memory-title">Soninho em Canoa Quebrada</h2>
             <div class="memory-content">
-                <img src="dormindo_viagem.jpg" alt="Eu e Bruno dormindo na viagem para Canoa Quebrada" class="memory-photo">
+                <img src="canoaquebrada.jpg" alt="Eu e Bruno dormindo na viagem para Canoa Quebrada" class="memory-photo">
                 <div class="memory-text">
-                    <p>Essa viagem para Canoa Quebrada com Gabriel e David foi top!</p>
+                    <p>Essa viagem para Canoa Quebrada com Gabriel e David foi épica! Mas o momento mais pacífico foi quando a gente caiu no sono no meio da viagem.</p>
                 </div>
             </div>
         </div>
@@ -284,8 +331,10 @@
         <div class="memory-box">
             <h2 class="memory-title">Aventura no Aeroporto</h2>
             <div class="memory-content">
-                <img src="aeroporto_iguatu.jpg" alt="Eu e Bruno no aeroporto de Iguatu" class="memory-photo">
+                <img src="aeroporto.jpg" alt="Eu e Bruno no aeroporto de Iguatu" class="memory-photo">
                 <div class="memory-text">
+                    <p>Essa foi a nossa grande expedição ao aeroporto de Iguatu com o Celso!</p>
+                    <p>Até hoje não sei quem estava mais animado nesse dia, você ou eu! kkkk</p>
                 </div>
             </div>
         </div>
@@ -296,6 +345,9 @@
             <div class="memory-content">
                 <img src="peixada.jpg" alt="Eu, Bruno, tio Celso e Esther no dia da peixada" class="memory-photo">
                 <div class="memory-text">
+                    <p>Esse dia da peixada foi histórico!</p>
+                    <p>Você, eu, tio Celso e Esther após saírmos da peixada que fomos almoçar</p>
+                    <p>Essas são as memórias que guardo no coração - e no estômago também!</p>
                 </div>
             </div>
         </div>
@@ -305,13 +357,16 @@
             <h2 class="memory-title">O Beijo do Sapo Real</h2>
             <div class="memory-content">
                 <div class="video-container">
-                    <video id="frogVideo">
-                        <source src="beijo_sapo.mp4" type="video/mp4">
+                    <video id="frogVideo" poster="sapo_thumbnail.jpg">
+                        <source src="sapo.mp4" type="video/mp4">
                         Seu navegador não suporta vídeos.
                     </video>
                     <div class="play-button" id="playButton"></div>
                 </div>
                 <div class="memory-text">
+                    <p>E como não lembrar do momento em que você quase virou um príncipe encantado? 🐸</p>
+                    <p>Enquanto você dormia tão tranquilamente, eu fiz o que qualquer primo amoroso faria: tentei fazer você beijar um sapo!</p>
+                    <p>Clique no play para reviver esse momento mágico (e um pouco nojento)!</p>
                     <p>PS: Prometo que o sapo saiu ileso dessa aventura!</p>
                 </div>
             </div>
@@ -322,16 +377,16 @@
             <div class="memory-content" style="flex-direction: column; text-align: center;">
                 <h2 class="memory-title">Para Meu Primo Incrível</h2>
                 <div class="memory-text">
-                    <p>Bruno, você não é apenas um primo para mim – é um irmão de coração, um exemplo de força e alegria, e o cúmplice perfeito para todas as aventuras (e travessuras, é claro!).</p>
-                    <p>Cada memória nossa é um tesouro. Dos pasteis que a gente devorava até os sapos que faziam a gente correr (e gritar!), cada momento ao seu lado vira uma história épica – daquelas que a gente conta pelo resto da vida!</p>
-                    <p>Neste seu aniversário, desejo que sua jornada seja repleta de conquistas grandiosas, risadas altas e sonhos realizados. Você merece o mundo!</p>
-                    <p>E o melhor? Que a gente continue escrevendo essa história maluca juntos – porque com você, até o simples vira extraordinário! Feliz aniversário, parceiro de todas as horas! 🎉✨"</p>
+                    <p>Bruno, você é mais que um primo pra mim - é um irmão, um exemplo e o parceiro perfeito para aventuras (e travessuras)!</p>
+                    <p>Cada uma dessas memórias mostra o quanto nossa história é especial. Desde os pasteis até os sapos, cada momento com você vira uma lembrança inesquecível.</p>
+                    <p>Neste seu aniversário, desejo que sua vida continue cheia de conquistas (e que você perdoe minhas brincadeiras)!</p>
+                    <p>Que possamos criar muitas outras memórias tão engraçadas quanto essas!</p>
                 </div>
             </div>
         </div>
         
         <div class="signature">
-            <p>Com todo amor,</p>
+            <p>Com todo amor e um pouco de vergonha,</p>
             <p>João Victor</p>
         </div>
     </div>
@@ -403,6 +458,29 @@
                 setTimeout(createConfetti, i * 50);
             }
         });
-    </script>
+    </script><script>
+  const audio = document.getElementById('audio');
+
+  function tentarTocarAudio() {
+    audio.muted = false;
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Se falhar, aguarda interação do usuário
+        const ativarSom = () => {
+          audio.play();
+          document.removeEventListener('click', ativarSom);
+          document.removeEventListener('touchstart', ativarSom);
+        };
+        document.addEventListener('click', ativarSom);
+        document.addEventListener('touchstart', ativarSom);
+      });
+    }
+  }
+
+  window.addEventListener('load', tentarTocarAudio);
+</script>
+
 </body>
 </html>
