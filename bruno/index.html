@@ -463,13 +463,13 @@
     </script><script>
   const audio = document.getElementById('audio');
 
-  function tentarTocarAudio() {
+  function tentarTocar() {
     audio.muted = false;
-    const playPromise = audio.play();
+    const play = audio.play();
 
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {
-        // Se falhar, aguarda interação do usuário
+    if (play !== undefined) {
+      play.catch(() => {
+        // Se falhar, aguarda primeiro toque do usuário
         const ativarSom = () => {
           audio.play();
           document.removeEventListener('click', ativarSom);
@@ -481,8 +481,7 @@
     }
   }
 
-  window.addEventListener('load', tentarTocarAudio);
+  window.addEventListener('load', tentarTocar);
 </script>
-
 </body>
 </html>
