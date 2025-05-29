@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Bruno! - Do João Victor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Permanent+Marker&display=swap');
+        
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #292F36;
+            --light: #F7FFF7;
+        }
+        
+        body {
+            font-family: 'Comic Neue', cursive;
+            background-color: var(--dark);
+            color: var(--light);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .birthday-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, 
+                          var(--primary), 
+                          var(--secondary), 
+                          var(--accent), 
+                          var(--primary));
+            z-index: -1;
+            border-radius: 30px;
+            animation: rainbowBorder 8s linear infinite;
+            background-size: 300% 300%;
+        }
+        
+        @keyframes rainbowBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        h1 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4rem;
+            color: white;
+            text-shadow: 3px 3px 0 var(--dark),
+                         6px 6px 0 rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .memory-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 3px dashed var(--accent);
+            transition: all 0.5s ease;
+        }
+        
+        .memory-box:hover {
+            transform: rotate(2deg) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .memory-title {
+            font-family: 'Permanent Marker', cursive;
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .memory-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .memory-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .memory-photo {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 5px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+        }
+        
+        .memory-photo:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            border: 5px solid var(--secondary);
+        }
+        
+        video {
+            width: 100%;
+            display: block;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .play-button::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 30px solid var(--primary);
+            margin-left: 5px;
+        }
+        
+        .frog-king {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: jump 3s infinite;
+        }
+        
+        @keyframes jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .frog-king:hover {
+            transform: scale(1.2);
+            animation: none;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent);
+            opacity: 0.7;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        
+        .signature {
+            text-align: center;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 2rem;
+            color: var(--accent);
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            border: 3px solid var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .memory-content {
+                flex-direction: column;
+            }
+            
+            .memory-text {
+                min-width: 100%;
+            }
+            
+            .memory-photo {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="birthday-container">
+        <header>
+            <h1>FELIZ ANIVERSÁRIO, BRUNO!</h1>
+            <div class="subtitle">Das memórias mais doces às mais... engraçadas! 🐸</div>
+        </header>
+        
+        <!-- Memória 1: Pastelaria Sensação -->
+        <div class="memory-box">
+            <h2 class="memory-title">Pastelaria Sensação</h2>
+            <div class="memory-content">
+                <img src="pastelaria.jpg" alt="Eu e Bruno na Pastelaria Sensação quando crianças" class="memory-photo">
+                <div class="memory-text">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Memória 2: Dormindo na viagem -->
+        <div class="memory-box">
+            <h2 class="memory-title">Soninho em Canoa Quebrada</h2>
+            <div class="memory-content">
+                <img src="dormindo_viagem.jpg" alt="Eu e Bruno dormindo na viagem para Canoa Quebrada" class="memory-photo">
+                <div class="memory-text">
+                    <p>Essa viagem para Canoa Quebrada com Gabriel e David foi top!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Memória 3: Aeroporto de Iguatu -->
+        <div class="memory-box">
+            <h2 class="memory-title">Aventura no Aeroporto</h2>
+            <div class="memory-content">
+                <img src="aeroporto_iguatu.jpg" alt="Eu e Bruno no aeroporto de Iguatu" class="memory-photo">
+                <div class="memory-text">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Memória 4: Peixada -->
+        <div class="memory-box">
+            <h2 class="memory-title">Dia da Peixada</h2>
+            <div class="memory-content">
+                <img src="peixada.jpg" alt="Eu, Bruno, tio Celso e Esther no dia da peixada" class="memory-photo">
+                <div class="memory-text">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vídeo do Sapo -->
+        <div class="memory-box">
+            <h2 class="memory-title">O Beijo do Sapo Real</h2>
+            <div class="memory-content">
+                <div class="video-container">
+                    <video id="frogVideo">
+                        <source src="beijo_sapo.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                    <div class="play-button" id="playButton"></div>
+                </div>
+                <div class="memory-text">
+                    <p>PS: Prometo que o sapo saiu ileso dessa aventura!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mensagem Final -->
+        <div class="memory-box">
+            <div class="memory-content" style="flex-direction: column; text-align: center;">
+                <h2 class="memory-title">Para Meu Primo Incrível</h2>
+                <div class="memory-text">
+                    <p>Bruno, você não é apenas um primo para mim – é um irmão de coração, um exemplo de força e alegria, e o cúmplice perfeito para todas as aventuras (e travessuras, é claro!).</p>
+                    <p>Cada memória nossa é um tesouro. Dos pasteis que a gente devorava até os sapos que faziam a gente correr (e gritar!), cada momento ao seu lado vira uma história épica – daquelas que a gente conta pelo resto da vida!</p>
+                    <p>Neste seu aniversário, desejo que sua jornada seja repleta de conquistas grandiosas, risadas altas e sonhos realizados. Você merece o mundo!</p>
+                    <p>E o melhor? Que a gente continue escrevendo essa história maluca juntos – porque com você, até o simples vira extraordinário! Feliz aniversário, parceiro de todas as horas! 🎉✨"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="signature">
+            <p>Com todo amor,</p>
+            <p>João Victor</p>
+        </div>
+    </div>
+    
+    <img src="sapo.png" alt="Sapo" class="frog-king" id="frogKing">
+    
+    <script>
+        // Controles do vídeo
+        const video = document.getElementById('frogVideo');
+        const playButton = document.getElementById('playButton');
+        
+        playButton.addEventListener('click', () => {
+            video.play();
+            playButton.style.display = 'none';
+        });
+        
+        video.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playButton.style.display = 'none';
+            } else {
+                video.pause();
+                playButton.style.display = 'flex';
+            }
+        });
+        
+        // Efeito do sapo
+        const frog = document.getElementById('frogKing');
+        let frogClicks = 0;
+        
+        frog.addEventListener('click', () => {
+            frogClicks++;
+            
+            if (frogClicks === 3) {
+                alert('Bruno, cuidado! O sapo está voltando para te beijar de volta! 🐸💋');
+                frogClicks = 0;
+            }
+            
+            // Efeito de confete
+            for (let i = 0; i < 50; i++) {
+                createConfetti();
+            }
+        });
+        
+        // Função de confete
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * window.innerWidth + 'px';
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            document.body.appendChild(confetti);
+            
+            let position = 0;
+            const fallInterval = setInterval(() => {
+                position += 5 + Math.random() * 5;
+                confetti.style.top = position + 'px';
+                confetti.style.transform = `rotate(${position}deg)`;
+                
+                if (position > window.innerHeight) {
+                    clearInterval(fallInterval);
+                    confetti.remove();
+                }
+            }, 20);
+        }
+        
+        // Confete inicial
+        window.addEventListener('load', () => {
+            for (let i = 0; i < 100; i++) {
+                setTimeout(createConfetti, i * 50);
+            }
+        });
+    </script>
+</body>
+</html>
